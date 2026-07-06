@@ -1,7 +1,7 @@
 # 🌐 xmhai.cn 网站延迟监控
 
-[![Latency Monitor](https://github.com/你的用户名/你的仓库名/actions/workflows/latency-monitor.yml/badge.svg)](https://github.com/你的用户名/你的仓库名/actions/workflows/latency-monitor.yml)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://你的用户名.github.io/你的仓库名/)
+[![Latency Monitor](https://github.com/xingmihai-web/uptime/actions/workflows/latency-monitor.yml/badge.svg)](https://github.com/xingmihai-web/uptime/actions/workflows/latency-monitor.yml)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://xingmihai-web.github.io/uptime/)
 
 &gt; 定时监控 https://www.xmhai.cn 的网站响应延迟，每 10 分钟采集一次数据。
 
