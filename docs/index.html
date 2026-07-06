@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 xmhai.cn 延迟监控</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+        .update-time {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+        .section {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid #334155;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            color: #60a5fa;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        .stat-card {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: #60a5fa;
+        }
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #60a5fa;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+        th {
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        tr:hover td {
+            background: #0f172a;
+        }
+        .status-good { color: #4ade80; }
+        .status-warn { color: #fbbf24; }
+        .status-bad { color: #f87171; }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-success { background: #064e3b; color: #4ade80; }
+        .badge-fail { background: #450a0a; color: #f87171; }
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-value { font-size: 1.4rem; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 xmhai.cn 网站延迟监控</h1>
+        <p class="subtitle">定时检测网站响应性能 | 每 10 分钟采集一次</p>
+        <p class="update-time">🕐 最后更新: 2026-07-06 07:57:17 UTC</p>
+        
+        <div class="section">
+            <h2>📊 最近 24 小时</h2>
+            
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">100.0%</div>
+                <div class="stat-label">成功率</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 平均</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">45.16 ms</div>
+                <div class="stat-label">总耗时平均</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB P95</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 最小</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 最大</div>
+            </div>
+        </div>
+        
+        </div>
+        
+        <div class="section">
+            <h2>📈 最近 7 天</h2>
+            
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">100.0%</div>
+                <div class="stat-label">成功率</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 平均</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">45.16 ms</div>
+                <div class="stat-label">总耗时平均</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB P95</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 最小</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 最大</div>
+            </div>
+        </div>
+        
+        </div>
+        
+        <div class="section">
+            <h2>📉 延迟趋势 (最近 48 小时)</h2>
+            <div class="chart-container">
+                <canvas id="latencyChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📋 每日汇总 (最近 30 天)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>检测次数</th>
+                        <th>成功/总计</th>
+                        <th>平均 TTFB</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td>2026-07-06</td>
+            <td>1</td>
+            <td>1/1 (100.0%)</td>
+            <td>44.89 ms</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>📊 全部历史统计</h2>
+            
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">100.0%</div>
+                <div class="stat-label">成功率</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 平均</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">45.16 ms</div>
+                <div class="stat-label">总耗时平均</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB P95</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 最小</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">44.89 ms</div>
+                <div class="stat-label">TTFB 最大</div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <script>
+        const chartData = [{"time": "2026-07-06 07:57:17", "ttfb": 44.89, "total": 45.16, "dns": 634.78, "tcp": 6.45}];
+        const labels = chartData.map(d => d.time);
+        
+        new Chart(document.getElementById('latencyChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'TTFB (ms)',
+                        data: chartData.map(d => d.ttfb),
+                        borderColor: '#60a5fa',
+                        backgroundColor: 'rgba(96, 165, 250, 0.1)',
+                        tension: 0.3,
+                        pointRadius: 0,
+                        pointHoverRadius: 4,
+                        fill: true
+                    },
+                    {
+                        label: 'DNS (ms)',
+                        data: chartData.map(d => d.dns),
+                        borderColor: '#f472b6',
+                        backgroundColor: 'transparent',
+                        tension: 0.3,
+                        pointRadius: 0,
+                        pointHoverRadius: 4,
+                        borderDash: [5, 5]
+                    },
+                    {
+                        label: 'TCP (ms)',
+                        data: chartData.map(d => d.tcp),
+                        borderColor: '#4ade80',
+                        backgroundColor: 'transparent',
+                        tension: 0.3,
+                        pointRadius: 0,
+                        pointHoverRadius: 4,
+                        borderDash: [2, 2]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#94a3b8' }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1e293b',
+                        titleColor: '#e2e8f0',
+                        bodyColor: '#e2e8f0',
+                        borderColor: '#334155',
+                        borderWidth: 1
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#64748b',
+                            maxTicksLimit: 12
+                        },
+                        grid: {
+                            color: '#334155',
+                            drawBorder: false
+                        }
+                    },
+                    y: {
+                        ticks: { color: '#64748b' },
+                        grid: {
+                            color: '#334155',
+                            drawBorder: false
+                        },
+                        title: {
+                            display: true,
+                            text: '延迟 (ms)',
+                            color: '#94a3b8'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
