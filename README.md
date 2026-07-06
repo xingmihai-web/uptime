@@ -7,7 +7,7 @@
 
 ## 📊 查看报告
 
-👉 **[点击在线查看监控报告](https://xingmihai-eeb.github.io/uptime/)**
+👉 **[点击在线查看监控报告](https://xingmihai-web.github.io/uptime/)**
 
 ## 🔧 监控指标
 
