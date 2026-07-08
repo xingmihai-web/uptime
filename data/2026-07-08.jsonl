@@ -1,2 +1,3 @@
 {"timestamp": "2026-07-08T07:43:14.497036+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 514.73, "tcp_ms": 3.64, "tls_ms": null, "ttfb_ms": 539.47, "total_ms": 539.74, "status_code": 403, "content_length": 5318, "error": null}
 {"timestamp": "2026-07-08T09:16:56.679663+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 869.23, "tcp_ms": 2.54, "tls_ms": null, "ttfb_ms": 472.61, "total_ms": 472.88, "status_code": 403, "content_length": 5296, "error": null}
+{"timestamp": "2026-07-08T13:18:22.313698+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 625.03, "tcp_ms": 3.71, "tls_ms": null, "ttfb_ms": 545.51, "total_ms": 545.81, "status_code": 403, "content_length": 5318, "error": null}
