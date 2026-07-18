@@ -1,1 +1,2 @@
 {"timestamp": "2026-07-18T01:05:09.977549+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 508.72, "tcp_ms": 70.49, "tls_ms": null, "ttfb_ms": 198.48, "total_ms": 198.87, "status_code": 200, "content_length": 38205, "error": null}
+{"timestamp": "2026-07-18T02:55:39.269694+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 178.1, "tcp_ms": 62.94, "tls_ms": null, "ttfb_ms": 199.63, "total_ms": 200.01, "status_code": 200, "content_length": 38205, "error": null}
