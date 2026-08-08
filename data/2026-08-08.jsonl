@@ -30,3 +30,4 @@
 {"timestamp": "2026-08-08T21:28:43.773274+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 223.15, "tcp_ms": 3.84, "tls_ms": null, "ttfb_ms": 45.06, "total_ms": 45.26, "status_code": 403, "content_length": 5318, "error": null}
 {"timestamp": "2026-08-08T21:57:27.366004+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 28.74, "tcp_ms": 2.86, "tls_ms": null, "ttfb_ms": 36.03, "total_ms": 36.26, "status_code": 403, "content_length": 5318, "error": null}
 {"timestamp": "2026-08-08T22:35:11.978287+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 255.81, "tcp_ms": 13.32, "tls_ms": null, "ttfb_ms": 76.92, "total_ms": 77.16, "status_code": 403, "content_length": 5318, "error": null}
+{"timestamp": "2026-08-08T23:01:50.713361+00:00", "url": "https://www.xmhai.cn", "success": true, "dns_ms": 221.24, "tcp_ms": 14.7, "tls_ms": null, "ttfb_ms": 77.37, "total_ms": 77.61, "status_code": 403, "content_length": 5318, "error": null}
