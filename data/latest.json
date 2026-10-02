@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-02T06:57:56.968352+00:00",
+  "timestamp": "2026-10-02T13:45:49.669077+00:00",
   "url": "https://www.xmhai.cn",
   "success": true,
-  "dns_ms": 1155.51,
-  "tcp_ms": 15.5,
+  "dns_ms": 2759.42,
+  "tcp_ms": 16.36,
   "tls_ms": null,
-  "ttfb_ms": 43.42,
-  "total_ms": 43.67,
+  "ttfb_ms": 46.78,
+  "total_ms": 47.03,
   "status_code": 403,
   "content_length": 5318,
   "error": null
